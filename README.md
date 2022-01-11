@@ -1,38 +1,16 @@
-# Restassured and Cucumber Weather API Testing Assignment
-## Getting started
-
-- [Java](https://www.java.com/en/)<br>
-- [Maven](https://maven.apache.org/)<br>
-
-## Configuration
-
-### `git clone https://github.com/podupu/WoollyRestassuredCucmberAssignment.git`
-
-Clone the project
-
 ## Commands
 
-### `mvn clean`
+This is a Cucumber based BDD framework written in Java
 
-Clean the maven repo
+### `mvn clean test`
 
-### `mvn install`
-
-Install the maven requirements
-
-### `mvn test`
-
-Execute the test scenarios
+Clean and Execute the test scenarios
 
 ### `reports`
 
-open in the browser cucumber-reports.html
+reports as target/cucumber-reports.html
 
-### `logs`
+### `response files`
 
-open in the browser logs/execution_log.html
+response files in target folder
 
-
-### `make help`
-
-Displays all options for the project's make commands
