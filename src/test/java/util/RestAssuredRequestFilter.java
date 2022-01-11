@@ -30,6 +30,9 @@ public class RestAssuredRequestFilter implements Filter {
                 "\n Request Body => " + requestSpec.getBody() +
                 "\n\n Response Status => "+ response.getStatusLine() +
                 "\n Response Header =>\n"+ response.getHeaders());
+        new OutputFileWriter("responseBody_"+response.getHeader("Date").
+                replace(" ","").replace(":","_"),
+                "json",response.body().prettyPrint());
         return response;
     }
 }

@@ -1,6 +1,6 @@
-package model;
+package info;
 
-public class WeatherDTO {
+public class Weatherinfo {
     public String icon;
     public int code;
     public String description;

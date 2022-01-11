@@ -1,11 +1,9 @@
-package support;
+package TestRunner;
 
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-import java.io.File;
 
 
 @RunWith(Cucumber.class)
@@ -16,7 +14,7 @@ import java.io.File;
                 "util.MyTestListener"
         }
         ,features= {"src/test/features"}
-        ,glue = {"steps"}
+        ,glue = {"stepDefinitions"}
 )
 
 

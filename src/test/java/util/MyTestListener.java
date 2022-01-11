@@ -19,9 +19,7 @@ public class MyTestListener implements ConcurrentEventListener {
         Status status = result.getStatus();
         Throwable error = result.getError();
         String scenarioName = testCase.getName();
-        if(error != null) {
-            LOG.info(error);
-        }
+        if(error != null) LOG.info(error);
         LOG.info("*****************************************************************************************");
         LOG.info("	Scenario: "+scenarioName+" --> "+status.name());
         LOG.info("*****************************************************************************************");

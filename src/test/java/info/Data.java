@@ -1,6 +1,6 @@
-package model;
+package info;
 
-public class DataDTO {
+public class Data {
     public int moonrise_ts;
     public String wind_cdir;
     public int rh;
@@ -26,7 +26,7 @@ public class DataDTO {
     public double dewpt;
     public int snow;
     public double uv;
-    public WeatherDTO weather;
+    public Weatherinfo weather;
     public int wind_dir;
     public Object max_dhi;
     public int clouds_hi;

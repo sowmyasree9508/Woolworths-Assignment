@@ -1,17 +1,17 @@
-package steps;
+package stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
-import model.DataDTO;
-import model.RootWeatherDTO;
+import info.Data;
+import info.Weatherbit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import util.Util;
 import util.PropertiesFile;
 import static io.restassured.RestAssured.*;
-import io.restassured.module.jsv.JsonSchemaValidator;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -30,8 +30,8 @@ public class ChooseySurfer {
     }
 
     HashMap<Integer, String> responseString = new HashMap<Integer, String>();
-    HashMap<String, List<DataDTO>> responseData = new HashMap<String, List<DataDTO>>();
-    List<DataDTO> responseBody = new ArrayList<>();
+    HashMap<String, List<Data>> responseData = new HashMap<String, List<Data>>();
+    List<Data> responseBody = new ArrayList<>();
     Map<String, Object> params = null;
     List<List<Double>> rows = null;
 
@@ -65,7 +65,7 @@ public class ChooseySurfer {
                     .body("$", not(hasKey("age")))
                     .statusCode(200).extract().response();
             // Deserialize the Response body into RootWeather
-            RootWeatherDTO body = context.response.getBody().as(RootWeatherDTO.class);
+            Weatherbit body = context.response.getBody().as(Weatherbit.class);
             responseBody.addAll(body.data);
             responseData.put(body.city_name, body.data);
             responseString.put(postcode, context.response.asString());
@@ -83,7 +83,7 @@ public class ChooseySurfer {
         int D1 = Util.iDayOfWeek.valueOf(arg1).getValue();
         int D2 = Util.iDayOfWeek.valueOf(arg2).getValue();
 
-        for (Map.Entry<String, List<DataDTO>> entry : responseData.entrySet()) {
+        for (Map.Entry<String, List<Data>> entry : responseData.entrySet()) {
             responseBody = entry.getValue().stream().filter(d -> {
                         try {
                             return dayOfWeekFilter(d.datetime, D1, D2);
@@ -124,7 +124,7 @@ public class ChooseySurfer {
     @Then("^I check to if see the temperature is between <(\\d+)°C and (\\d+)°C>$")
     public void i_check_to_if_see_the_temperature_is_between_C_and_C(int t1, int t2) throws Throwable {
 
-        for (Map.Entry<String, List<DataDTO>> entry : responseData.entrySet()) {
+        for (Map.Entry<String, List<Data>> entry : responseData.entrySet()) {
             responseBody = entry.getValue().stream().filter(d -> (d.temp > t1 && d.temp < t2))
                     .collect(Collectors.toList());
             responseData.put(entry.getKey(), responseBody);
@@ -137,7 +137,7 @@ public class ChooseySurfer {
     @Then("^I check wind speed to be between (\\d+) and (\\d+)$")
     public void i_check_wind_speed_to_be_between_and(int s1, int s2) throws Throwable {
 
-        for (Map.Entry<String, List<DataDTO>> entry : responseData.entrySet()) {
+        for (Map.Entry<String, List<Data>> entry : responseData.entrySet()) {
             responseBody = entry.getValue().stream().filter(d -> (d.wind_spd > s1 && d.wind_spd < s2))
                     .collect(Collectors.toList());
             responseData.put(entry.getKey(), responseBody);
@@ -150,7 +150,7 @@ public class ChooseySurfer {
     @Then("^I check to see if UV index is <= (\\d+)$")
     public void i_check_to_see_if_UV_index_is(int uv) throws Throwable {
 
-        for (Map.Entry<String, List<DataDTO>> entry : responseData.entrySet()) {
+        for (Map.Entry<String, List<Data>> entry : responseData.entrySet()) {
             responseBody = entry.getValue().stream().filter(d -> d.uv <= uv)
                     .collect(Collectors.toList());
             responseData.put(entry.getKey(), responseBody);
@@ -161,7 +161,7 @@ public class ChooseySurfer {
 
     @Then("^I Pick best suitable spot out of top two spots, based upon suitable weather forecast for the day$")
     public void i_Pick_best_suitable_spot_out_of_top_two_spots_based_upon_suitable_weather_forecast_for_the_day() throws Throwable {
-        for (Map.Entry<String, List<DataDTO>> entry : responseData.entrySet()) {
+        for (Map.Entry<String, List<Data>> entry : responseData.entrySet()) {
             System.out.println("Result: \"The Best suited spot would be : \" " + entry.getKey() + ", On date : " + entry.getValue().get(0).datetime+
                     " , Forecast : There would be " + entry.getValue().get(0).weather.description);
             break;
@@ -169,10 +169,3 @@ public class ChooseySurfer {
 
     }
 }
-
-
-
-
-
-
-

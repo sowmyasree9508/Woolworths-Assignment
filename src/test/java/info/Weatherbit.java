@@ -1,9 +1,9 @@
-package model;
+package info;
 
 import java.util.List;
 
-public class RootWeatherDTO {
-    public List<DataDTO> data;
+public class Weatherbit {
+    public List<Data> data;
     public String city_name;
     public double lon;
     public String timezone;

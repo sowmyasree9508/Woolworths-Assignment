@@ -13,6 +13,13 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -149,8 +156,9 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.Woolworths Assignment">
+  <component name="RunManager" selected="JUnit.All in Woolworths Assignment (3)">
     <configuration name="assignment" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <module name="WoollyRestassuredCucmberAssignment" />
       <shortenClasspath name="NONE" />
@@ -159,19 +167,60 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Woolworths Assignment" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration name="All in Woolworths Assignment (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Woolworths Assignment" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Woolworths Assignment (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Woolworths Assignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Woolworths Assignment (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Woolworths Assignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Woolworths Assignment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Woolworths Assignment" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CucumberRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Woolworths Assignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestRunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestRunner" />
+      <option name="MAIN_CLASS_NAME" value="TestRunner.CucumberRunner" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Woolworths Assignment" />
+        <item itemvalue="JUnit.All in Woolworths Assignment (3)" />
+        <item itemvalue="JUnit.All in Woolworths Assignment (2)" />
+        <item itemvalue="JUnit.All in Woolworths Assignment (1)" />
+        <item itemvalue="JUnit.All in Woolworths Assignment" />
+        <item itemvalue="JUnit.CucumberRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -244,6 +293,11 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="First Commit." />
     <option name="LAST_COMMIT_MESSAGE" value="First Commit." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/restassured_cucumber$CucumberRunner.ic" NAME="CucumberRunner Coverage Results" MODIFIED="1641778846207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>support.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/resources/schemas/weather.json">
